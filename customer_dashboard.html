@@ -1,17 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Customer Dashboard - AyudaBesh</title>
-  <link rel="stylesheet" href="customer_style.css" />
-</head>
-<body>
-  <div class="header">
-    <h1>AyudaBesh</h1>
-    <button class="logout-btn" onclick="logout()">Logout</button>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Customer Dashboard - AyudaBesh</title>
+    <link rel="stylesheet" href="customer_style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+  </head>
 
-  <script src="customer_script.js"></script>
-</body>
+  <body>
+    <header>
+      <nav class="navbar">
+        <span class="hamburger-btn material-symbols-rounded">menu</span>
+        <a href="#" class="logo">
+          <img src="img/logo_circle.png" alt="AyudaBesh-logo">
+          <h2>AyudaBesh</h2>
+        </a>
+
+        <ul class="links">
+          <span class="close-btn material-symbols-rounded">close</span>
+          <li><a class="nav-btn" href="#">Home</a></li>
+          <li><a class="nav-btn" href="#">My Requests</a></li>
+          <li><a class="nav-btn" href="#">Services</a></li>
+          <li><a class="nav-btn" href="#">Providers</a></li>
+          <li><a class="nav-btn" href="#">Help</a></li>
+        </ul>
+
+        <!-- will eventually replace this with a drop-down profile menu. Logout will be place there instead. -->
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </nav>
+    </header>
+
+    <div class="home-hero">
+      <div class="wrap">
+        <form class="search">
+          <select class="searchFilter" name="filter" aria-label="Search filter">
+            <option value="all">All</option>
+            <option value="service">Service</option>
+            <option value="provider">Provider</option>
+          </select>
+          <input type="text" class="searchTerm" placeholder="Search services or providers...">
+          <button type="submit" class="searchButton">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <span class="sr-only">
+              <img src="img/search_icon.png" alt="Search Icon">
+            </span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="dashboard-content">
+        <div class="request-content">
+          <h3>My Requests</h3>
+          <p>View and manage your current service requests here.</p>
+
+          <div class="info-grid">
+
+          </div>
+        </div>
+
+        <div class="service-content">
+          <h3>Available Services</h3>
+          <p>Explore the services we offer and request assistance.</p>
+
+          <div class="info-grid">
+            <div class="info-card">
+              <div class="card-image">
+                <img src="img/house_cleaning.jpg" alt="House Cleaning">
+              </div>
+              <div class="card-text">
+                <h4>House Cleaning</h4>
+                <p>Professional house cleaning services for regular upkeep and deep cleans.</p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="card-image">
+                <img src="img/plumbing_electronic_repairs.webp" alt="Plumbing and Electrical Repairs">
+              </div>
+              <div class="card-text">
+                <h4>Plumbing and Electrical Repairs</h4>
+                <p>Qualified technicians for plumbing fixes and electrical repairs.</p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="card-image">
+                <img src="img/pest_control.webp" alt="Pest Control">
+              </div>
+              <div class="card-text">
+                <h4>Pest Control</h4>
+                <p>Safe and effective pest control solutions for homes and properties.</p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="card-image">
+                <img src="img/home_maintenance.webp" alt="General Home Maintenance & Handyman Services">
+              </div>
+              <div class="card-text">
+                <h4>General Home Maintenance &amp; Handyman Services</h4>
+                <p>Small repairs, installations, and general handyman tasks.</p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="card-image">
+                <img src="img/appliance_installations.jpg" alt="Appliance Installation">
+              </div>
+              <div class="card-text">
+                <h4>Appliance Installation</h4>
+                <p>Installation and setup for household appliances.</p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="card-image">
+                <img src="img/minor_renovations.webp" alt="Minor Renovations">
+              </div>
+              <div class="card-text">
+                <h4>Minor Renovations</h4>
+                <p>Small renovation projects and upgrades to improve your space.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="provider-content">
+          <h3>Active Providers Nearby</h3>
+          <p>See nearby providers who can assist you.</p>
+
+          <div class="info-grid">
+              <!--Provider cards will be dynamically populated here. 
+              Cards will scroll horizonrtally????
+              Results will vary based on location and ratings???? -->
+          </div>
+        </div>
+
+        <div class="help-content">
+          <h3>Help & Resources</h3>
+          <p>Find FAQs, contact support, and other resources.</p>
+
+          <div class="info-grid">
+              
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <script src="customer_script.js"></script>
+  </body>
 </html>
